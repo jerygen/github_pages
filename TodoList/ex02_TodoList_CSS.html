@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/App.css" />
+    <link rel="stylesheet" type="text/css" href="css/Editor.css" />
+    <link rel="stylesheet" type="text/css" href="css/Header.css" />
+    <link rel="stylesheet" type="text/css" href="css/List.css" />
+    <link rel="stylesheet" type="text/css" href="css/TodoItem.css" />
+  </head>
+  <body>
+    <div class="App">
+      <div class="Header">
+        <h3>오늘의 Plan😊</h3>
+        <h1>Web April 01 2026</h1>
+      </div>
+
+      <form>
+        <div class="Editor">
+          <input type="text" placeholder="새로운 todo" />
+          <button>추가</button>
+        </div>
+      </form>
+
+      <div class="List">
+        <h4>Todo List ✨</h4>
+        <input type="text" placeholder="검색어를 입력하세요." />
+        <div class="todos_wrapper">
+          <div class="TodoItem">
+            <input type="checkbox" />
+            <div class="content">React study</div>
+            <div class="date">2026-04-01</div>
+            <button onclick="">삭제</button>
+          </div>
+          <div class="TodoItem">
+            <input type="checkbox" />
+            <div class="content">친구 만나기</div>
+            <div class="date">2026-04-01</div>
+            <button onclick="">삭제</button>
+          </div>
+          <div class="TodoItem">
+            <input type="checkbox" />
+            <div class="content">낮잠 자기</div>
+            <div class="date">2026-04-01</div>
+            <button onclick="">삭제</button>
+          </div>
+          <!--item 끝-->
+        </div>
+        <!--todo-wrapper 끝-->
+      </div>
+      <!--List 끝-->
+    </div>
+    <!--App 끝-->
+  </body>
+</html>

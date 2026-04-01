@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/App.css" />
+    <link rel="stylesheet" type="text/css" href="css/Editor.css" />
+    <link rel="stylesheet" type="text/css" href="css/Header.css" />
+    <link rel="stylesheet" type="text/css" href="css/List.css" />
+    <link rel="stylesheet" type="text/css" href="css/TodoItem.css" />
+  </head>
+  <body>
+    <script>
+      //초기 데이터
+      let mockData = [
+        {
+          id: 0,
+          isDone: false,
+          content: "React study",
+          date: new Date().getTime(),
+        },
+        {
+          id: 1,
+          isDone: true,
+          content: "친구만나기",
+          date: new Date().getTime(),
+        },
+        {
+          id: 2,
+          isDone: false,
+          content: "낮잠자기",
+          date: new Date().getTime(),
+        },
+      ];
+
+      // 요일 출력을 위한 배열
+      let day = ["일", "월", "화", "수", "목", "금", "토"];
+
+      //onload()가 아닌 window.onload를 해야 출력되는 이유
+      //HTML 설계도가 다 그려진 다음에 자바스크립트가 일을 시작하게 하기 위해서
+      //()가 있으면 바로 지금 실행하라는 의미, 없으면 나중에 때가 되면 실행
+      window.onload = () => {
+        //initData(mokData) 함수 호출
+        initData(mockData);
+        // 현재 날짜를 년 월 일 요일로 출력한다.
+        let now = new Date();
+        let year = now.getFullYear();
+        let month = now.getMonth() + 1; //월은 0부터 시작
+        let date = now.getDate();
+        let today = day[now.getDay()];
+
+        let str = `${year}년 ${month}월 ${date}일 ${today}요일`;
+
+        document.querySelector("h1").innerHTML = str;
+
+        //추가 기능
+        let idIndex = 3; // id의 값을 증가 시킬 변수(초기데이터가 2까지 있으므로 3부터 시작)
+        document.querySelector(".Editor > button").onclick = (event) => {
+          event.preventDefault(); //전송기능 막음
+
+          /*
+            id는 idIndex,
+            isDone은 기본 false,
+            content는 입력한 내용,
+            date는 new Date().getTime()
+          */
+          let inputValue = document.querySelector(".Editor > input").value;
+
+          let newData = {
+            id: idIndex,
+            isDone: false,
+            content: inputValue,
+            date: new Date().getTime(),
+          };
+          //준비된 하나의 레코드를 mokData에 push()함수를 이용해서 추가한다.
+
+          mockData.push(newData);
+          idIndex++;
+          //입력창 비우기
+          document.querySelector(".Editor > input").value = "";
+          initData(mockData); //호출한다.(다시 화면 랜더링)
+        };
+
+        ////////////////////////////////////////
+        //검색 기능
+        document.querySelector("#keyword").onkeyup = (e) => {
+          let searchedTodos = getFilterData(e.target.value);
+
+          initData(searchedTodos);
+        };
+
+        const getFilterData = (search) => {
+          //검색어가 없으면 mockData를 리턴한다.
+          if (search === "") {
+            return mockData;
+          }
+
+          //filter함수를 이용해서 search(검색어)를 포함하고 있는 todo들를 받는다
+          //filter의 결과를 리턴 한다.
+          return mockData.filter((item) => {
+            return item.content.includes(search);
+          });
+        };
+      };
+      //////////////////////////////////
+      function initData(data) {
+        // mockData 배열을 forEach를 이용해서  화면에 출력한다
+
+        /*
+                date
+                  toLocaleString() 시간 + 날짜
+                  toLocaleDateString() 날짜
+
+                checkbox
+                  onchange=”onUpdate(id값)”
+                  todo의 isDone이 true이면 checked속성 추가
+
+                button
+                   name속성 추가해서  value에 todo의 id 설정
+                   onclick =”todoDel(this)” 추가
+              */
+        let list = "";
+        data.forEach((item) => {
+          list += `
+                <div class="TodoItem">
+                  <input type="checkbox" onchange="onUpdate(${item.id})" ${item.isDone ? "checked" : ""}/>
+                  <div class="content">${item.content}</div>
+                  <div class="date">${new Date(item.date).toLocaleString()}</div>
+                  <button onclick="todoDel(this)" value="${item.id}" name="delete">삭제</button>
+                </div>`;
+        });
+        document.querySelector(".todos_wrapper").innerHTML = list;
+      }
+
+      ////////////////////////////////////
+      //수정 기능
+      const onUpdate = (targetId) => {
+        //targetId = TodoItem에서 호출할 때 전달한 id
+        /*
+            mockData의 state의 값들 중에 targetId와 일치하는
+            todoitem의 isDone 변경 map함수를 이용한다.
+            map함수의 결과를 mockData에 저장한다.
+          */
+        mockData = mockData.map((item) => {
+          if (item.id === targetId) {
+            return {
+              id: item.id,
+              isDone: !item.isDone,
+              content: item.content,
+              date: item.date,
+            };
+          } else {
+            return {
+              id: item.id,
+              isDone: item.isDone,
+              content: item.content,
+              date: item.date,
+            };
+          }
+        });
+
+        initData(mockData); //호출한다.(다시 화면 랜더링)
+      };
+
+      ///////////////////////////////////////
+      //삭제 기능
+      const todoDel = (th) => {
+        console.log(th.value);
+        //filter()함수를 이용해서 삭제하려는 대상이외의 todo만 추출해서 mockData에 담든다.
+        mockData = mockData.filter((item) => item.id != Number(th.value));
+
+        initData(mockData); //호출한다.(다시 화면 랜더링)
+      };
+    </script>
+    <div class="App">
+      <div class="Header">
+        <h3>오늘의 Plan😊</h3>
+        <h1></h1>
+      </div>
+
+      <form>
+        <div class="Editor">
+          <input type="text" placeholder="새로운 todo" />
+          <button onclick="">추가</button>
+        </div>
+      </form>
+
+      <div class="List">
+        <h4>Todo List ✨</h4>
+        <input type="text" id="keyword" placeholder="검색어를 입력하세요." />
+        <div class="todos_wrapper"><!-- TodoItem이 작성되는 곳--></div>
+        <!--todo-wrapper 끝-->
+      </div>
+      <!--List 끝-->
+    </div>
+    <!--App 끝-->
+  </body>
+</html>
