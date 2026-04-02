@@ -54,51 +54,23 @@ function filterAndSortFruits() {
 
 // 채소 출력 (3개씩 증가)
 function loadVeggies() {
-  let keyword = searchBox.value;
-  let sortOrder = sortSelect.value;
-
-  let filtered = veggies.filter((item) => {
-    return item.name.includes(keyword);
-  });
-
-  if (keyword === "") {
-    if (sortOrder === "name") {
-      filtered.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (sortOrder === "low") {
-      filtered.sort((a, b) => a.price - b.price);
-    } else filtered.sort((a, b) => b.price - a.price);
-  }
-
   //3개씩 보여주기
   let limit = (veggiePage + 1) * 3;
-  let slicedData = filtered.slice(0, limit);
+  let slicedData = veggies.slice(0, limit);
 
-  if (limit >= filtered.length) {
+  if (limit >= veggies.length) {
     loadMoreBtn.style.display = "none";
-  } else {
-    loadMoreBtn.style.display = "block";
   }
-
+  veggiePage++;
   //화면에 다시 출력
   renderProducts(slicedData, veggieList);
 }
 ////////////////////////////////////////////////////////
 
 // 이벤트 리스너
-searchBox.addEventListener("input", () => {
-  veggiePage = 0;
-  filterAndSortFruits();
-  loadVeggies();
-});
-sortSelect.addEventListener("change", () => {
-  veggiePage = 0;
-  filterAndSortFruits();
-  loadVeggies();
-});
-loadMoreBtn.addEventListener("click", () => {
-  veggiePage++;
-  loadVeggies();
-});
+searchBox.addEventListener("input", filterAndSortFruits);
+sortSelect.addEventListener("change", filterAndSortFruits);
+loadMoreBtn.addEventListener("click", loadVeggies);
 
 // 초기 실행
 filterAndSortFruits();

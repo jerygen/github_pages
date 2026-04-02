@@ -58,7 +58,6 @@
         let idIndex = 3; // id의 값을 증가 시킬 변수(초기데이터가 2까지 있으므로 3부터 시작)
         document.querySelector(".Editor > button").onclick = (event) => {
           event.preventDefault(); //전송기능 막음
-
           /*
             id는 idIndex,
             isDone은 기본 false,
@@ -75,7 +74,7 @@
           };
           //준비된 하나의 레코드를 mokData에 push()함수를 이용해서 추가한다.
 
-          mockData.push(newData);
+          mockData.push(newData); //끝에 추가
           idIndex++;
           //입력창 비우기
           document.querySelector(".Editor > input").value = "";
@@ -99,14 +98,15 @@
           //filter함수를 이용해서 search(검색어)를 포함하고 있는 todo들를 받는다
           //filter의 결과를 리턴 한다.
           return mockData.filter((item) => {
-            return item.content.includes(search);
+            return item.content
+              .toLocaleLowerCase()
+              .includes(search.toLocaleLowerCase());
           });
         };
       };
       //////////////////////////////////
       function initData(data) {
         // mockData 배열을 forEach를 이용해서  화면에 출력한다
-
         /*
                 date
                   toLocaleString() 시간 + 날짜
@@ -143,12 +143,17 @@
             map함수의 결과를 mockData에 저장한다.
           */
         mockData = mockData.map((item) => {
-          if (item.id === targetId) {
+          if (item.id === Number(targetId)) {
+            //값과 타입 일치
             return {
               id: item.id,
               isDone: !item.isDone,
               content: item.content,
               date: item.date,
+              /*
+              //spread함수
+              ...item, isDone: !item.isDone
+              */
             };
           } else {
             return {
@@ -179,6 +184,7 @@
         <h1></h1>
       </div>
 
+      <!--form으로 감싸져 있으면 엔터치면 자동으로 submit된다.-->
       <form>
         <div class="Editor">
           <input type="text" placeholder="새로운 todo" />
@@ -190,7 +196,6 @@
         <h4>Todo List ✨</h4>
         <input type="text" id="keyword" placeholder="검색어를 입력하세요." />
         <div class="todos_wrapper"><!-- TodoItem이 작성되는 곳--></div>
-        <!--todo-wrapper 끝-->
       </div>
       <!--List 끝-->
     </div>
