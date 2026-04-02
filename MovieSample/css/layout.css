@@ -73,7 +73,7 @@ nav {
 				margin-left: 22px;
 				padding-left: 33px;
 				text-align: left;
-				background: url("img/rss.png") left center no-repeat;
+				background: url("../img/rss.png") left center no-repeat;
 			}
 
 
@@ -82,7 +82,7 @@ nav {
 	position: relative;
 	margin-top: 66px;
 	padding: 39px;
-	background: #80027f url("img/intro_background.png") repeat-x;
+	background: #80027f url("../img/intro_background.png") repeat-x;
 	height : 50px;
 	width: 100%
 	
