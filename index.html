@@ -1,19 +1,20 @@
 <!doctype html>
 <html>
   <head>
-    <title>Rortfolio</title>
+    <title>W3.CSS Template</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Raleway"
+      href="https://fonts.googleapis.com/css?family=Roboto"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <style>
+      html,
       body,
       h1,
       h2,
@@ -21,456 +22,247 @@
       h4,
       h5,
       h6 {
-        font-family: "Raleway", sans-serif;
+        font-family: "Roboto", sans-serif;
       }
     </style>
   </head>
-  <body class="w3-light-grey w3-content" style="max-width: 1600px">
-    <!-- Sidebar/menu -->
-    <nav
-      class="w3-sidebar w3-collapse w3-white w3-animate-left"
-      style="z-index: 3; width: 300px"
-      id="mySidebar"
-    >
-      <br />
-      <div class="w3-container">
-        <a
-          href="#"
-          onclick="w3_close()"
-          class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey"
-          title="close menu"
-        >
-          <i class="fa fa-remove"></i>
-        </a>
-        <img
-          src="/w3images/avatar_g2.jpg"
-          style="width: 45%"
-          class="w3-round"
-        /><br /><br />
-        <h4><b>PORTFOLIO</b></h4>
-        <p class="w3-text-grey">Template by W3.CSS</p>
-      </div>
-      <div class="w3-bar-block">
-        <a
-          href="#portfolio"
-          onclick="w3_close()"
-          class="w3-bar-item w3-button w3-padding w3-text-teal"
-          ><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a
-        >
-        <a
-          href="#about"
-          onclick="w3_close()"
-          class="w3-bar-item w3-button w3-padding"
-          ><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a
-        >
-        <a
-          href="#contact"
-          onclick="w3_close()"
-          class="w3-bar-item w3-button w3-padding"
-          ><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a
-        >
-      </div>
-      <div class="w3-panel w3-large">
-        <i class="fa fa-facebook-official w3-hover-opacity"></i>
-        <i class="fa fa-instagram w3-hover-opacity"></i>
-        <i class="fa fa-snapchat w3-hover-opacity"></i>
-        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-        <i class="fa fa-twitter w3-hover-opacity"></i>
-        <i class="fa fa-linkedin w3-hover-opacity"></i>
-      </div>
-    </nav>
-
-    <!-- Overlay effect when opening sidebar on small screens -->
-    <div
-      class="w3-overlay w3-hide-large w3-animate-opacity"
-      onclick="w3_close()"
-      style="cursor: pointer"
-      title="close side menu"
-      id="myOverlay"
-    ></div>
-
-    <!-- !PAGE CONTENT! -->
-    <div class="w3-main" style="margin-left: 300px">
-      <!-- Header -->
-      <header id="portfolio">
-        <a href="#"
-          ><img
-            src="/w3images/avatar_g2.jpg"
-            style="width: 65px"
-            class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"
-        /></a>
-        <span
-          class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey"
-          onclick="w3_open()"
-          ><i class="fa fa-bars"></i
-        ></span>
-        <div class="w3-container">
-          <h1><b>My Portfolio</b></h1>
-          <div class="w3-section w3-bottombar w3-padding-16">
-            <span class="w3-margin-right">Filter:</span>
-            <button class="w3-button w3-black">ALL</button>
-            <button class="w3-button w3-white">
-              <i class="fa fa-diamond w3-margin-right"></i>Frontend
-            </button>
-            <button class="w3-button w3-white w3-hide-small">
-              <i class="fa fa-photo w3-margin-right"></i>Backend
-            </button>
-            <button class="w3-button w3-white w3-hide-small">
-              <i class="fa fa-map-pin w3-margin-right"></i>기타
-            </button>
-          </div>
-        </div>
-      </header>
-
-      <!-- First Photo Grid-->
+  <body class="w3-light-grey">
+    <!-- Page Container -->
+    <div class="w3-content w3-margin-top" style="max-width: 1400px">
+      <!-- The Grid -->
       <div class="w3-row-padding">
-        <div class="w3-third w3-container w3-margin-bottom">
-          <a href="TodoList/ex03_TodoList_JS.html">
-            <img
-              src="./img/TodoList.png"
-              alt="Norway"
-              style="width: 100%"
-              class="w3-hover-opacity"
-            />
-          </a>
-          <div class="w3-container w3-white">
-            <p><b>Todo List</b></p>
-            <p>
-              그날 해야 할 일 관리 페이지, 새로 할 일 추가 가능, 이미 한 일은
-              체크 표시 가능, 잘못 입력한 리스트는 삭제 가능
-            </p>
+        <!-- Left Column -->
+        <div class="w3-third">
+          <div class="w3-white w3-text-grey w3-card-4">
+            <div class="w3-display-container">
+              <img src="img/miyeon.JPG" style="width: 100%" alt="miyeon" />
+              <div class="w3-display-bottomleft w3-container w3-text-white">
+                <h2>김미연</h2>
+              </div>
+            </div>
+            <div class="w3-container">
+              <p>
+                <i
+                  class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"
+                ></i
+                >Software Engineer
+              </p>
+              <p>
+                <i
+                  class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"
+                ></i
+                >Yongin, Korea
+              </p>
+              <p>
+                <i
+                  class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"
+                ></i
+                >myksphone2001@gmail.com
+              </p>
+              <p>
+                <i
+                  class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"
+                ></i
+                >01076003921
+              </p>
+              <hr />
+
+              <p class="w3-large">
+                <b
+                  ><i
+                    class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"
+                  ></i
+                  >Skills</b
+                >
+              </p>
+              <p>Java</p>
+              <div class="w3-light-grey w3-round-xlarge w3-small">
+                <div
+                  class="w3-container w3-center w3-round-xlarge w3-teal"
+                  style="width: 90%"
+                >
+                  90%
+                </div>
+              </div>
+              <p>Python</p>
+              <div class="w3-light-grey w3-round-xlarge w3-small">
+                <div
+                  class="w3-container w3-center w3-round-xlarge w3-teal"
+                  style="width: 80%"
+                >
+                  <div class="w3-center w3-text-white">80%</div>
+                </div>
+              </div>
+              <p>SQL</p>
+              <div class="w3-light-grey w3-round-xlarge w3-small">
+                <div
+                  class="w3-container w3-center w3-round-xlarge w3-teal"
+                  style="width: 75%"
+                >
+                  75%
+                </div>
+              </div>
+              <p>React</p>
+              <div class="w3-light-grey w3-round-xlarge w3-small">
+                <div
+                  class="w3-container w3-center w3-round-xlarge w3-teal"
+                  style="width: 50%"
+                >
+                  50%
+                </div>
+              </div>
+              <br />
+
+              <p class="w3-large w3-text-theme">
+                <b
+                  ><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i
+                  >Languages</b
+                >
+              </p>
+              <p>Korean</p>
+              <div class="w3-light-grey w3-round-xlarge">
+                <div
+                  class="w3-round-xlarge w3-teal"
+                  style="height: 24px; width: 100%"
+                ></div>
+              </div>
+              <p>Engilish</p>
+              <div class="w3-light-grey w3-round-xlarge">
+                <div
+                  class="w3-round-xlarge w3-teal"
+                  style="height: 24px; width: 55%"
+                ></div>
+              </div>
+              <!-- <p>German</p>
+              <div class="w3-light-grey w3-round-xlarge">
+                <div
+                  class="w3-round-xlarge w3-teal"
+                  style="height: 24px; width: 25%"
+                ></div>
+              </div> -->
+              <br />
+            </div>
           </div>
+          <br />
+
+          <!-- End Left Column -->
         </div>
-        <div class="w3-third w3-container w3-margin-bottom">
-          <a href="fruits_shop_temp/index.html">
-            <img
-              src="./img/fruits_shop.png"
-              alt="Norway"
-              style="width: 100%"
-              class="w3-hover-opacity"
-            />
-          </a>
-          <div class="w3-container w3-white">
-            <p><b>Fruits Shop</b></p>
-            <p>
-              과일과 채소 상품 페이지, 상품명으로 검색 가능, 이름순, 가격 낮은
-              순, 가격 높은 순으로 정렬 가능, 상품을 클릭하면 상품 상세페이지로
-              이동
-            </p>
+
+        <!-- Right Column -->
+        <div class="w3-twothird">
+          <div class="w3-container w3-card w3-white w3-margin-bottom">
+            <h2 class="w3-text-grey w3-padding-16">
+              <i
+                class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"
+              ></i
+              >Project
+            </h2>
+            <div class="w3-container">
+              <h5 class="w3-opacity">
+                <b>Frontend</b>
+              </h5>
+              <h6 class="w3-text-teal">
+                <i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2026 -
+                ing<!--Jan 2015 -
+                <span class="w3-tag w3-teal w3-round">Current</span>-->
+              </h6>
+              <div>
+                <ul>
+                  <li><a href="TodoList/ex03_TodoList_JS.html">TodoList</a></li>
+                  <li><a href="fruits_shop_temp/index.html">fruits_shop</a></li>
+                  <li><a href="WS_03_template/index.html">KOSTA Bank</a></li>
+                  <li><a href="MovieSample/index.html">Movie</a></li>
+                  <li><a href="TodoList_React/index.html">TodoList</a></li>
+                </ul>
+              </div>
+              <hr />
+            </div>
+            <div class="w3-container">
+              <h5 class="w3-opacity"><b>Backend</b></h5>
+              <h6 class="w3-text-teal">
+                <i class="fa fa-calendar fa-fw w3-margin-right"></i>
+              </h6>
+              <div>
+                <ul>
+                  <li>추가 예정</li>
+                </ul>
+              </div>
+              <hr />
+            </div>
+            <div class="w3-container">
+              <h5 class="w3-opacity">
+                <b>Final Project</b>
+              </h5>
+              <h6 class="w3-text-teal">
+                <i class="fa fa-calendar fa-fw w3-margin-right"></i>
+              </h6>
+              <div>
+                <ul>
+                  <li>추가 예정</li>
+                </ul>
+              </div>
+              <br />
+            </div>
           </div>
-        </div>
-        <div class="w3-third w3-container">
-          <a href="WS_03_template/index.html">
-            <img
-              src="./img/KOSTA_bank.png"
-              alt="Norway"
-              style="width: 100%"
-              class="w3-hover-opacity"
-            />
-          </a>
-          <div class="w3-container w3-white">
-            <p><b>KOSTA Bank</b></p>
-            <p>광고 배너, 로그인 및 회원가입, 개인, 기업 페이지로 이동,</p>
+
+          <div class="w3-container w3-card w3-white">
+            <h2 class="w3-text-grey w3-padding-16">
+              <i
+                class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"
+              ></i
+              >Education
+            </h2>
+            <div class="w3-container">
+              <h5 class="w3-opacity"><b>KOSTA</b></h5>
+              <h6 class="w3-text-teal">
+                <i class="fa fa-calendar fa-fw w3-margin-right"></i>2026.02 -
+                ing
+              </h6>
+              <p>AI를 활용한 Java 기반 DevOps 개발자 양성과정</p>
+              <hr />
+            </div>
+            <!-- <div class="w3-container">
+              <h5 class="w3-opacity"><b>London Business School</b></h5>
+              <h6 class="w3-text-teal">
+                <i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015
+              </h6>
+              <p>Master Degree</p>
+              <hr />
+            </div> -->
+            <div class="w3-container">
+              <h5 class="w3-opacity"><b>프로그래머스</b></h5>
+              <h6 class="w3-text-teal">
+                <i class="fa fa-calendar fa-fw w3-margin-right"></i>2025.04 -
+                2025.07
+              </h6>
+              <p>데이터 엔지니어링</p>
+              <br />
+            </div>
           </div>
+
+          <!-- End Right Column -->
         </div>
+
+        <!-- End Grid -->
       </div>
 
-      <!-- Second Photo Grid-->
-      <div class="w3-row-padding">
-        <div class="w3-third w3-container w3-margin-bottom">
-          <a href="MovieSample/index.html">
-            <img
-              src="./img/Movie.png"
-              alt="Norway"
-              style="width: 100%"
-              class="w3-hover-opacity"
-          /></a>
-          <div class="w3-container w3-white">
-            <p><b>Movie</b></p>
-            <p>영화 페이지, 보고 싶은 영화 미리보기 가능, 찜하기 가능</p>
-          </div>
-        </div>
-        <div class="w3-third w3-container w3-margin-bottom">
-          <a href="TodoList_React/index.html">
-            <img
-              src="./img/TodoList_React.png"
-              alt="Norway"
-              style="width: 100%"
-              class="w3-hover-opacity"
-            />
-          </a>
-          <div class="w3-container w3-white">
-            <p><b>Todo List - React</b></p>
-            <p>
-              앞선 Todo List를 React로 구현, 리스트 검색, 삭제, 추가, 수정 기능
-            </p>
-          </div>
-        </div>
-        <div class="w3-third w3-container">
-          <a href="">
-            <img
-              src=""
-              alt="Norway"
-              style="width: 100%"
-              class="w3-hover-opacity"
-            />
-          </a>
-          <div class="w3-container w3-white">
-            <p><b>Lorem Ipsum</b></p>
-            <p>
-              Praesent tincidunt sed tellus ut rutrum. Sed vitae justo
-              condimentum, porta lectus vitae, ultricies congue gravida diam non
-              fringilla.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pagination -->
-      <div class="w3-center w3-padding-32">
-        <div class="w3-bar">
-          <a
-            href="#"
-            class="w3-bar-item w3-button w3-hover-black"
-            data-page="pre"
-            >«</a
-          >
-          <a href="#" class="w3-bar-item w3-black w3-button" data-page="1">1</a>
-          <a href="#" class="w3-bar-item w3-button w3-hover-black" data-page="2"
-            >2</a
-          >
-          <a href="#" class="w3-bar-item w3-button w3-hover-black" data-page="3"
-            >3</a
-          >
-          <a href="#" class="w3-bar-item w3-button w3-hover-black" data-page="4"
-            >4</a
-          >
-          <a
-            href="#"
-            class="w3-bar-item w3-button w3-hover-black"
-            data-page="next"
-            >»</a
-          >
-        </div>
-      </div>
-
-      <!-- Images of Me -->
-      <div class="w3-row-padding w3-padding-16" id="about">
-        <div class="w3-col m6">
-          <img src="" alt="Me" style="width: 100%" />
-        </div>
-        <div class="w3-col m6">
-          <img src="" alt="Me" style="width: 100%" />
-        </div>
-      </div>
-
-      <div class="w3-container w3-padding-large" style="margin-bottom: 32px">
-        <h4><b>About Me</b></h4>
-        <p>
-          안녕하세요. 꾸준히 성장하는 개발자 김미연입니다. 지금까지 데이터
-          엔지니어링 코스와 AI를 활용한 Java 기반 DevOps 개발자 코스를 수강하고
-          있습니다.
-        </p>
-        <hr />
-
-        <h4>Technical Skills</h4>
-        <!-- Progress bars / Skills -->
-        <p>Java</p>
-        <div class="w3-grey">
-          <div
-            class="w3-container w3-dark-grey w3-padding w3-center"
-            style="width: 80%"
-          >
-            80%
-          </div>
-        </div>
-        <p>SQL</p>
-        <div class="w3-grey">
-          <div
-            class="w3-container w3-dark-grey w3-padding w3-center"
-            style="width: 80%"
-          >
-            80%
-          </div>
-        </div>
-        <p>Python</p>
-        <div class="w3-grey">
-          <div
-            class="w3-container w3-dark-grey w3-padding w3-center"
-            style="width: 80%"
-          >
-            80%
-          </div>
-        </div>
-        <hr />
-      </div>
-
-      <!-- Contact Section -->
-      <div class="w3-container w3-padding-large w3-grey">
-        <h4 id="contact"><b>Contact Me</b></h4>
-        <div
-          class="w3-row-padding w3-center w3-padding-24"
-          style="margin: 0 -16px"
-        >
-          <div class="w3-third w3-dark-grey">
-            <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
-            <p>myksphone2001@gmail.com</p>
-          </div>
-          <div class="w3-third w3-teal">
-            <p>
-              <i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i>
-            </p>
-            <p>Yongin si, KOREA</p>
-          </div>
-          <div class="w3-third w3-dark-grey">
-            <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
-            <p>01076003921</p>
-          </div>
-        </div>
-        <!-- <hr class="w3-opacity" />
-        <form action="/action_page.php" target="_blank">
-          <div class="w3-section">
-            <label>Name</label>
-            <input
-              class="w3-input w3-border"
-              type="text"
-              name="Name"
-              required
-            />
-          </div>
-          <div class="w3-section">
-            <label>Email</label>
-            <input
-              class="w3-input w3-border"
-              type="text"
-              name="Email"
-              required
-            />
-          </div>
-          <div class="w3-section">
-            <label>Message</label>
-            <input
-              class="w3-input w3-border"
-              type="text"
-              name="Message"
-              required
-            />
-          </div>
-          <button type="submit" class="w3-button w3-black w3-margin-bottom">
-            <i class="fa fa-paper-plane w3-margin-right"></i>Send Message
-          </button>
-        </form> -->
-      </div>
-
-      <!-- Footer -->
-      <footer class="w3-container w3-padding-32 w3-dark-grey">
-        <div class="w3-row-padding">
-          <div class="w3-third">
-            <h3>FOOTER</h3>
-            <p>
-              Praesent tincidunt sed tellus ut rutrum. Sed vitae justo
-              condimentum, porta lectus vitae, ultricies congue gravida diam non
-              fringilla.
-            </p>
-            <p>
-              Powered by
-              <a
-                href="https://www.w3schools.com/w3css/default.asp"
-                target="_blank"
-                >w3.css</a
-              >
-            </p>
-          </div>
-
-          <div class="w3-third">
-            <h3>BLOG POSTS</h3>
-            <ul class="w3-ul w3-hoverable">
-              <li class="w3-padding-16">
-                <img
-                  src="/w3images/workshop.jpg"
-                  class="w3-left w3-margin-right"
-                  style="width: 50px"
-                />
-                <span class="w3-large">Lorem</span><br />
-                <span>Sed mattis nunc</span>
-              </li>
-              <li class="w3-padding-16">
-                <img
-                  src="/w3images/gondol.jpg"
-                  class="w3-left w3-margin-right"
-                  style="width: 50px"
-                />
-                <span class="w3-large">Ipsum</span><br />
-                <span>Praes tinci sed</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="w3-third">
-            <h3>POPULAR TAGS</h3>
-            <p>
-              <span class="w3-tag w3-black w3-margin-bottom">Travel</span>
-              <span class="w3-tag w3-grey w3-small w3-margin-bottom"
-                >New York</span
-              >
-              <span class="w3-tag w3-grey w3-small w3-margin-bottom"
-                >London</span
-              >
-              <span class="w3-tag w3-grey w3-small w3-margin-bottom">IKEA</span>
-              <span class="w3-tag w3-grey w3-small w3-margin-bottom"
-                >NORWAY</span
-              >
-              <span class="w3-tag w3-grey w3-small w3-margin-bottom">DIY</span>
-              <span class="w3-tag w3-grey w3-small w3-margin-bottom"
-                >Ideas</span
-              >
-              <span class="w3-tag w3-grey w3-small w3-margin-bottom">Baby</span>
-              <span class="w3-tag w3-grey w3-small w3-margin-bottom"
-                >Family</span
-              >
-              <span class="w3-tag w3-grey w3-small w3-margin-bottom">News</span>
-              <span class="w3-tag w3-grey w3-small w3-margin-bottom"
-                >Clothing</span
-              >
-              <span class="w3-tag w3-grey w3-small w3-margin-bottom"
-                >Shopping</span
-              >
-              <span class="w3-tag w3-grey w3-small w3-margin-bottom"
-                >Sports</span
-              >
-              <span class="w3-tag w3-grey w3-small w3-margin-bottom"
-                >Games</span
-              >
-            </p>
-          </div>
-        </div>
-      </footer>
-
-      <div class="w3-black w3-center w3-padding-24">
-        Powered by
-        <a
-          href="https://www.w3schools.com/w3css/default.asp"
-          title="W3.CSS"
-          target="_blank"
-          class="w3-hover-opacity"
-          >w3.css</a
-        >
-      </div>
-
-      <!-- End page content -->
+      <!-- End Page Container -->
     </div>
 
-    <script>
-      // Script to open and close sidebar
-      function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
-        document.getElementById("myOverlay").style.display = "block";
-      }
-
-      function w3_close() {
-        document.getElementById("mySidebar").style.display = "none";
-        document.getElementById("myOverlay").style.display = "none";
-      }
-    </script>
+    <footer class="w3-container w3-teal w3-center w3-margin-top">
+      <p>Find me on social media.</p>
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+      <p>
+        Powered by
+        <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"
+          >w3.css</a
+        >
+      </p>
+    </footer>
   </body>
 </html>
